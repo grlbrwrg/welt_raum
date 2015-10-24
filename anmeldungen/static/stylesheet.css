@@ -1,0 +1,27 @@
+body {
+    background-color: #4db032;
+}
+
+div {
+    background-color: #ffffff;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    width: 80%;
+    margin: 10px;
+    
+}
+
+.main {
+    margin:auto;
+}
+
+
+.container {
+    width: 95%;
+    display: table;
+    table-layout: fixed;
+    margin:auto;
+}
+.child {
+    display: table-cell;
+}

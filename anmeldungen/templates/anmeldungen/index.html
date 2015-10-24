@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>welt_raum Anmeldung</title>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'stylesheet.css' %}">
+
+</head>
+
+<body>
+<div class="main">
+<h1>welt_raum Events</h1></br>
+Vom {{datum}}</br></br>
+
+<div class="container">
+{% for x in events %}
+<div class="child">
+
+<b>{{ x.titel }}</b></br>
+
+{{ x.beschreibung }}</br></br>
+<b>Termin:</b></br>
+{{ x.termin.day }}.{{ x.termin.month }}. - {{ x.termin.hour }}:{{ x.termin.minute }}</br>
+{{ x.strasse }}, {{ x.ort }}</br>
+
+</br>
+</div>
+
+{% endfor %}
+</div>
+</div>
+<div class="main">
+<h1>Anmeldung</h1>
+<form method="post" action="">
+{% csrf_token %}
+E-Mail: {{ anmeldung.mail }}</br>
+Name: {{ anmeldung.name }}</br></br>
+Ich möchte mich verbindlich für folgende Events anmelden:</br>
+<ul style="list-style-type:none">
+{% for x in anmeldung.events %}
+    <label for="{{ x.id_for_label }}">
+        <li><span class="events">{{ x.tag }}</span>
+        {{ x.choice_label }}</li>
+        </br>
+    </label>
+{% endfor %}</ul></br></br>
+<input type="submit" value="Abschicken"/>
+</form>
+</br>
+</div>
+</body>
+</html>

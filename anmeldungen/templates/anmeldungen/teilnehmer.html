@@ -1,0 +1,10 @@
+<form method="post" action="">
+{% csrf_token %}
+{{ eventauswahl }}
+<input type="submit" value="Abschicken"/>
+</form>
+
+{% for i in nutzer %}
+{{ i.mail }}, 
+
+{% endfor %}
