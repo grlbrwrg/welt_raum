@@ -7,6 +7,7 @@ from .forms import EventAuswahlForm
 from django.contrib.auth.decorators import login_required
 
 
+
 # Create your views here.
 
 
@@ -53,11 +54,10 @@ def anmeldung(request):
         inhalt = anmeldungForm(request.POST)
         if inhalt.is_valid():
             inhalt.save()
-           
             return HttpResponseRedirect('/erfolg/?=')
 
         else:
-            return HttpResponse("FEHLER!")
+            return HttpResponse("FEHLER! Bitte wende dich an welt_raum@posteo.de")
         
         
     # wenn (aus dem Newsletter) GET-Informationen mitgeschickt wurden (mail, fname & lname), werden sie schon ins Formular eingefügt

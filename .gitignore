@@ -3,3 +3,4 @@ welt_raum/settings_secret.py
 *.pyc
 welt_raum/settings_local.py
 db.sqlite3
+*.pyc
