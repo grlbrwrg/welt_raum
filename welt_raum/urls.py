@@ -23,3 +23,4 @@ urlpatterns = [
     url(r'^teilnehmer/', views.teilnehmer, name='Erfolg'),
 
 ]
+

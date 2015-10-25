@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
-from settings_secret import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -24,7 +23,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -109,3 +107,5 @@ EMAIL_HOST = 'w01306a5.kasserver.com'
 EMAIL_HOST_USER = 'm035dcef'
 EMAIL_PORT = '25'
 EMAIL_USE_TLS = True
+
+from welt_raum.settings_local import *
