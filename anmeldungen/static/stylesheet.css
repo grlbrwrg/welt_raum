@@ -1,11 +1,12 @@
 body {
-    background-color: #4d0032;
+    background-color: #4db032;
 }
 
 div {
-    background-color: #ff00ff;
+    background-color: #ffffff;
+    color: #888888;
     text-align: center;
-    font-family: Verdana, Geneva, sans-serif;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
     width: 80%;
     margin: 10px;
     
