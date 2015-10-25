@@ -9,7 +9,7 @@
 
 <body>
 <div class="main">
-<h1>welt_raum Events</h1></br>
+<h1>welt_raum Events</h1>
 Vom {{datum}}</br></br>
 
 <div class="container">
@@ -17,11 +17,11 @@ Vom {{datum}}</br></br>
 <div class="child">
 
 <b>{{ x.titel }}</b></br>
-
+</br>
 {{ x.beschreibung }}</br></br>
 <b>Termin:</b></br>
 {{ x.termin.day }}.{{ x.termin.month }}. - {{ x.termin.hour }}:{{ x.termin.minute }}</br>
-{{ x.strasse }}, {{ x.ort }}</br>
+{{ x.strasse }}, {{ x.plz }} {{ x.ort }}</br>
 
 </br>
 </div>

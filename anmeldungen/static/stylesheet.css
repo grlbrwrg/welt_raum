@@ -25,4 +25,8 @@ div {
 }
 .child {
     display: table-cell;
+    text-align: justify;
+    padding: 10px;
+
+    
 }
