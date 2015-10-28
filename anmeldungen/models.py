@@ -19,6 +19,7 @@ class Events(models.Model):
     strasse = models.CharField(max_length=140)
     plz = models.IntegerField(max_length=None)
     ort = models.CharField(max_length=100)
+    deactive = models.BooleanField(default=False)
     def __str__(self):
         return self.titel
         

@@ -48,7 +48,7 @@ def anmeldung(request):
             p = get_week_days(i.jahr,i.kw)
             datum = str(p)
     # zieht alle Events, die aktiven KWs zugeordnet sind
-    events = Events.objects.filter(kw=kw)
+    events = Events.objects.filter(kw=kw).filter(deactive=False)
     # werden Events über das Formular gesendet, werden sie in die Datenbank gespeichert & eine Bestätigungsmail wird geschickt. Weiterleitung auf die Dank-Seite
     if request.method == 'POST':
         inhalt = anmeldungForm(request.POST)
