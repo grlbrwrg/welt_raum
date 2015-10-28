@@ -104,8 +104,8 @@ STATIC_ROOT = '/home/Walter/dev/welt_raum/staticfiles/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'w01306a5.kasserver.com'
-EMAIL_HOST_USER = 'm035dcef'
-EMAIL_PORT = '25'
+EMAIL_HOST_USER = 'anmeldungen@welt-raum.org'
+EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 
 from welt_raum.settings_local import *

@@ -48,12 +48,15 @@ def anmeldung(request):
             p = get_week_days(i.jahr,i.kw)
             datum = str(p)
     # zieht alle Events, die aktiven KWs zugeordnet sind
-    events = Events.objects.filter(kw=kw).filter(deactive=False)
+    events = Events.objects.filter(kw=kw) #.filter(deactive=False)
     # werden Events über das Formular gesendet, werden sie in die Datenbank gespeichert & eine Bestätigungsmail wird geschickt. Weiterleitung auf die Dank-Seite
     if request.method == 'POST':
         inhalt = anmeldungForm(request.POST)
         if inhalt.is_valid():
             inhalt.save()
+            mail = inhalt.cleaned_data['mail']
+            name = inhalt.cleaned_data['name']
+            send_mail('welt_raum Anmeldung','Hallo %s! \n\nDie Anmeldung war erfolgreich! Wir werden uns demnächst per E-Mail mit weiteren Informationen melden. \n\nLiebe Grüße, \nDas welt_raum-Team' % (name),'anmeldung@welt-raum.org', [mail],fail_silently=True,)
             return HttpResponseRedirect('/erfolg/?=')
 
         else:
@@ -70,7 +73,7 @@ def anmeldung(request):
         return render(request, 'anmeldungen/index.html',{'anmeldung':anmeldung,'events':events,'datum':datum})
     # wenn die Seite ohne weitere Informationen aufgerufen wird, wird ein leeres Formular erstellt
     anmeldung = anmeldungForm()    
-    anmeldung.fields['events'].queryset = events
+    anmeldung.fields['events'].queryset = events.filter(deactive=False)
     return render(request, 'anmeldungen/index.html',{'anmeldung':anmeldung,'events':events,'datum':datum})
     
 def erfolg(request):
